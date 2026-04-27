@@ -404,6 +404,7 @@ export default function ExamScreen() {
 
 const styles = StyleSheet.create({
   root: {
+    marginBottom: 70,
     flex: 1,
     backgroundColor: "#F0F4FF",
   },

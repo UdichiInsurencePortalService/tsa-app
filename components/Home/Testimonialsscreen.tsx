@@ -1,14 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
 import {
-    Animated,
-    Dimensions,
-    FlatList,
-    SafeAreaView,
-    StatusBar,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View,
+  Animated,
+  Dimensions,
+  FlatList,
+  SafeAreaView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
 
 const { width: SCREEN_WIDTH } = Dimensions.get("window");
@@ -289,6 +289,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#F0F5FF",
   },
   container: {
+    marginBottom: 60,
     flex: 1,
     paddingTop: 36,
     paddingBottom: 24,

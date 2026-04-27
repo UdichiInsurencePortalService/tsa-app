@@ -1,13 +1,14 @@
+import { useRouter } from "expo-router";
 import React, { useState } from "react";
 import {
-    Dimensions,
-    SafeAreaView,
-    ScrollView,
-    StatusBar,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View,
+  Dimensions,
+  SafeAreaView,
+  ScrollView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
 
 const { width } = Dimensions.get("window");
@@ -40,6 +41,7 @@ const COLORS = {
   accent: "#2D54E8",
   accentLight: "#EBF0FF",
   label: "#0D1B3E",
+
   labelSecondary: "#4A5568",
   pill: "#FFFFFF",
   pillText: "#2D54E8",
@@ -85,6 +87,8 @@ const IndustryCard = ({ item, isSelected, onPress }) => (
 // ─── App ──────────────────────────────────────────────────────────────────────
 
 export default function Industry() {
+  const router = useRouter();
+
   const [selectedId, setSelectedId] = useState(8); // Transportation pre-selected
 
   const handleSelect = (id) => {
@@ -117,7 +121,10 @@ export default function Industry() {
           {/* Title + CTA row */}
           <View style={styles.titleRow}>
             <Text style={styles.title}>Built for Every{"\n"}Industry</Text>
-            <TouchableOpacity style={styles.pill}>
+            <TouchableOpacity
+              style={styles.pill}
+              onPress={() => router.push("/industries")}
+            >
               <Text style={styles.pillText}>View All</Text>
             </TouchableOpacity>
           </View>
@@ -150,7 +157,11 @@ export default function Industry() {
         </View>
 
         {/* ── Bottom CTA ── */}
-        <TouchableOpacity style={styles.bottomCta} activeOpacity={0.85}>
+        <TouchableOpacity
+          style={styles.bottomCta}
+          activeOpacity={0.85}
+          onPress={() => router.push("/industries")}
+        >
           <Text style={styles.bottomCtaText}>View All Industries →</Text>
         </TouchableOpacity>
       </ScrollView>
